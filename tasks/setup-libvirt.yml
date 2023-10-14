@@ -1,0 +1,10 @@
+---
+- name: Create libvirt .config dir
+  file:
+    path: "{{ target_dir }}/.config/libvirt"
+    state: directory
+
+- name: Upload config and templates
+  copy:
+    src: files/libvirt/
+    dest: "{{ target_dir }}/.config/libvirt"

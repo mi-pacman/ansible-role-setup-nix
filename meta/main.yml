@@ -1,0 +1,12 @@
+---
+dependencies: []
+
+galaxy_info:
+  role_name: setup-nix
+  author: mi
+  description: Sets up nvim, tmux and zsh on nix
+  min_ansible_version: 2.4
+  platforms:
+    - name: NixOS
+  galaxy_tags:
+    - server

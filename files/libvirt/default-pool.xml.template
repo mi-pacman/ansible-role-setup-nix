@@ -1,0 +1,7 @@
+<!-- Default pool for libvirt -->
+<pool type='dir'>
+  <name>default</name>
+  <target>
+    <path>/var/lib/libvirt/images/default</path>
+  </target>
+</pool>

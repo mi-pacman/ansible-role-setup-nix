@@ -1,0 +1,26 @@
+---
+- name: Create .config dir
+  file:
+    path: "{{ target_dir }}/.config"
+    state: directory
+
+- name: Make nvim git directory safe
+  command: "git config --global --add safe.directory {{ target_dir }}/.config/nvim"
+  check_mode: no
+
+- name: Download nvchad from git
+  git:
+    repo: https://github.com/nvchad/nvchad
+    depth: 1
+    dest: "{{ target_dir }}/.config/nvim"
+
+- name: Create custom dir in nvim folder
+  file:
+    path: "{{ target_dir }}/.config/nvim/lua/custom"
+    state: directory
+
+- name: Upload custom plugins file
+  copy:
+    src: files/neovim/
+    dest: "{{ target_dir }}/.config/nvim/lua/custom/"
+  when: install_nvim_plugins

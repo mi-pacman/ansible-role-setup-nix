@@ -1,0 +1,11 @@
+---
+- name: Setup MOTD
+  block:
+    - name: Ensure .config file exists
+      file:
+        path: "{{ target_dir }}/.config/neofetch"
+        state: directory
+    - name: Copy neofetch config
+      copy:
+        src: files/neofetch/
+        dest: "{{ target_dir }}/.config/neofetch/"
