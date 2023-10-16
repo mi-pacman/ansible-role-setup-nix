@@ -2,9 +2,6 @@
 - name: Setup MOTD
   import_tasks: setup-motd.yml
 
-- name: Configure Zsh
-  import_tasks: configure-zsh.yml
-
 - name: Configure Neovim
   import_tasks: configure-neovim.yml
 
